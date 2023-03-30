@@ -1,0 +1,77 @@
+[data-toggle='modal']{
+    background-color: red;
+}
+
+[data-title]{
+    color: red;
+}
+
+.dropdown{
+    position: relative;
+    width: 250px
+}
+.dropdown .btn{
+    background-color: #fff;
+    width: 100%;
+    padding: 0px 10px;
+    border: 0;
+    box-shadow: 1px 1px 10px 0 black;
+    font-size: 16px;
+}
+.dropdown .dropdown-menu{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width:200px;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    z-index: 1;
+    display: none;
+    background-color: #fff;
+    box-shadow: 1px 1px 10px 0 rgb(56, 55, 55);
+}
+
+.dropdown.open .dropdown-menu{
+    display: block;
+    
+}
+.dropdown .dropdown-menu li{
+    padding: 8px 15px;
+    font-size: 16px;
+}
+.dropdown .dropdown-menu li a{
+    text-decoration: none;
+    color: #333;
+}
+.dropdown .dropdown-menu li:hover{
+    background-color: #eee;
+}
+
+#container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: yellow;
+  }
+  #animate {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: red;
+  }
+
+  .button{
+      height: 40px;
+  }
+  .button span{
+      height: 20px;
+      background-color: red;
+  }
+
+  .box{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background: cyan;
+  }

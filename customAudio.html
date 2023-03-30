@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="./libs/slick/slick-theme.css">
+    <link rel="stylesheet" href="./libs/slick/slick.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/customAudio.css">
+</head>
+
+<body>
+    <div class="container">
+        <audio controls id="audio">
+            <source
+                src="https://s1.mp3.aka.zdn.vn/97b0339410d3f98da0c2/9198407288959479808?authen=exp=1613172010~acl=/97b0339410d3f98da0c2/*~hmac=698e34f1e20fab008d30a06862e46298&fs=MTYxMzA4NTYxMDE4Mnx3ZWJWNHwxMzgdUngODAdUngMTEyLjIwNg"
+                type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+
+        <div class="custom-audio">
+            <div class="controls">
+                <div class="play"><i class="ion-play"></i></div>
+                <div class="pause"><i class="ion-pause"></i></div>
+            </div>
+            <div class="timer">
+                <div class="currentTime">00:00</div>
+                <div class="duration">00:00</div>
+            </div>
+            <div class="duration-bar">
+                <div class="slider-bar"></div>
+                <div class="slider-handle"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./libs/jquery/jquery-3.5.1.min.js"></script>
+    <script src="./libs/slick/slick.min.js"></script>
+    <script src="js/customAudio.js"></script>
+</body>
+
+</html>

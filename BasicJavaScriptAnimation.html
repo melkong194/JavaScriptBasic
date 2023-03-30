@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <title>Demo</title>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/169e38946f.js" crossorigin="anonymous"></script>
+    <style>
+    	/* SELECTOR
+		//All the p trong div: para1,2;
+		div p {
+			background-color: yellow;
+		}
+
+		//All the p la con level 1 cua~ div: para1,2;
+		div > p {
+			background-color: yellow;
+		}
+
+		//1 the sau div: para3;
+		div + p {
+			background-color: yellow;
+		}
+
+		//All the sau div: para3,4;
+		div ~ p {
+			background-color: yellow;
+		}
+
+		//All the sau div: para3,4;
+		div ~ p {
+			background-color: yellow;
+		}
+
+		/*BEFORE, AFTER: Mac dinh la inline.
+		*/
+[class*="demo-"]{
+	margin-bottom: 10px;
+}
+*, *::before,*::after{
+	box-sizing: border-box;
+}
+:focus{
+outline: none;
+}
+
+		.demo-1 {
+			width: 150px;
+			height: 150px;
+			position: relative;
+			background-color: yellow;
+		}
+		.demo-1 .line{
+			width: 0%;
+			height: 5px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			background-color: red;
+			transition-property: width; 
+			transition-delay: 0s;
+			transition-duration: 1s;
+			transition-timing-function: ease;
+		}
+		.demo-1:hover .line{
+			width: 100%;
+		}
+
+
+		.demo-1-c2 {
+			width: 150px;
+			height: 150px;
+			position: relative;
+			background-color: yellow;
+			transition: 1s;
+		}
+		.demo-1-c2::before {
+			content: 'Demo 1 - cach 2';
+			display: block;
+			position: relative;
+			background-color: red;
+			height: 5px;
+			left: 0;
+			bottom: 0;
+			width: 0%;
+			transition: 1s;
+		}
+
+		.demo-1-c2:hover::before {
+			width: 100%;
+		}
+		.demo-1-c2:hover{
+			width: 100%;
+		}
+
+		.demo-2{
+			width: 150px;
+			height: 150px;
+			position: relative;
+			background-color: yellow;
+		}		
+		.demo-2::before, .demo-2::after{
+			transition: 1s;
+			content:'';
+			display: block;
+			position: absolute;
+			height: 5px;
+			width: 0%;
+		}
+		.demo-2::before{
+			background-color: red;
+			top: 0;
+			left: 0;
+		}
+		.demo-2::after{			
+			background-color: blue;
+			bottom: 0;
+			right: 0;
+		}
+		.demo-2:hover::before , .demo-2:hover::after{
+			width: 100%;
+		}
+	
+		.demo-3{
+			width: 150px;
+			height: 150px;
+			position: relative;
+			background-color: yellow;
+		}		
+		.demo-3::before, .demo-3::after{
+			transition: 1s;
+			content:'Demo 3';
+			display: block;
+			position: absolute;
+			height: 5px;
+		}
+		.demo-3::before{
+			background-color: red;
+			right: 100%;
+			left: 0;
+		}
+		.demo-3:hover::before{
+			right: 0;
+		}
+		.demo-3::after{	
+			top:10%;		
+			background-color: blue;
+			left: 100%;
+			right: 0;
+		}		
+		.demo-3:hover::after{
+			left: 0;			
+		}
+
+		.demo-4{
+			width: 150px;
+			height: 150px;
+			position: relative;
+			background-color: yellow;
+		}		
+		.demo-4::before, .demo-4::after{
+			transition: 1s;
+			content:'Demo 4';
+			display: block;
+			position: absolute;
+			height: 5px;
+		}
+		.demo-4::before{
+			background-color: red;
+			top: 0;
+			right: 50%;
+			left: 50%;
+		}
+		.demo-4:hover::before{
+			right: 0;
+			left:0;
+		}
+		.demo-4::after{			
+			background-color: blue;
+			bottom: 0;
+			right: 50%;
+			left: 50%;
+		}		
+		.demo-4:hover::after{
+			right: 0;
+			left:0;			
+		}
+
+		.demo-5{
+			width: 150px;
+			height: 150px;
+			position: relative;
+			background-color: yellow;
+
+		}		
+		.demo-5::before, .demo-5::after{
+			transition: 1s;
+			content:'Demo 5';
+			display: block;
+			position: absolute;
+			height: 5px;
+			right: 50%;
+			left: 50%;
+		}
+		.demo-5::before{
+			background-color: red;
+			top: 0;
+		}
+		.demo-5::after{			
+			background-color: red;
+			bottom: 0;
+		}	
+		.demo-5:hover::before, .demo-5:hover::after{
+			right: 0;
+			left:0;
+			opacity: 0.5;
+		}	
+		.demo-5 .line::before, .demo-5 .line::after{
+			content: '';
+			width: 5px;
+			position: absolute;
+			background-color: blue;
+			transition: 1s;	
+			top:50%;
+			bottom: 50%;		
+		}
+		.demo-5 .line::before{
+			left: 0;
+		}
+		.demo-5 .line::after{
+			right: 0;
+		}
+		.demo-5:hover .line::after,.demo-5:hover .line::before {
+			top:0;
+			bottom: 0;
+			opacity: 0.5;
+		}
+		.demo-5 a{
+			position: relative;
+			z-index: 1;
+		}
+
+		.demo-6{
+			width: 150px;
+			height: 150px;
+			position: relative;
+			background-color: yellow;
+		}		
+		.demo-6::before, .demo-6::after{
+			transition: 1s;
+			content:'Demo 6';
+			display: block;
+			position: absolute;
+		}
+		.demo-6::before{
+			top: 0;
+			bottom: 0;
+			right: 50%;
+			left: 50%;
+			border-top: 5px solid blue;
+			border-bottom: 5px solid blue;
+		}
+		.demo-6:hover::before{
+			right: 0;
+			left:0;
+			pointer-events: none;
+		}
+		.demo-6::after{	
+			left: 0;
+			right: 0;		
+			bottom: 50%;
+			top: 50%;
+			border-left: 5px solid red;
+			border-right: 5px solid red;
+		}		
+		.demo-6:hover::after{
+			top: 0;
+			bottom:0;
+			pointer-events: none;			
+		}
+
+		.demo-7{
+			width: 150px;
+			height: 150px;
+			position: relative;
+			background-color: yellow;
+		}		
+		.demo-7::before, .demo-7::after{
+			content:'Demo 7';
+			display: block;
+			position: absolute;
+		}
+		.demo-7::before{
+			height: 5px;
+			left: 0%;
+			right: 100%;
+			background-color: red;			
+		}
+		.demo-7:hover::before{
+			right: 0;
+			transition: 0.5s;
+		}
+		.demo-7::after{	
+			width: 5px;
+			right: 0;
+			bottom: 100%;
+			top: 0;
+			background-color: blue;
+		}		
+		.demo-7:hover::after{
+			bottom: 0;
+			transition: 0.5s 0.25s;		
+		}
+		.demo-7 .line::before{
+			content: '';
+			right: 0;
+			left: 100%;
+			bottom: 0;
+			height: 5px;
+			background-color: green;
+			position: absolute;
+			display: block;
+		}
+		.demo-7:hover .line::before{
+			left: 0;
+			transition: 0.5s 0.5s;
+		}
+		.demo-7 .line::after{
+			content: '';
+			top: 100%;
+			bottom: 0;
+			left: 0;
+			width: 5px;
+			background-color: purple;
+			position: absolute;
+			display: block;
+		}
+		.demo-7:hover .line::after{
+			top:0;
+			transition: 0.5s 0.75s;
+		}
+
+
+		*, *::before, *::after{
+			box-sizing: border-box;
+		}
+		.demo-8{
+			width: 150px;
+			height: 150px;
+			position: relative;
+			background-color: yellow;
+		}		
+		.demo-8::before, .demo-8::after{
+			content:'Demo 8';
+			display: block;
+			position: absolute;
+		}
+		.demo-8::before{
+			left: 0%;
+			right: 0%;
+			width: 0;
+			height: 0;
+			border-top: 5px solid red;
+			border-right: 5px solid blue;
+			visibility: hidden;
+		}
+		.demo-8:hover::before{
+			width: 100%;
+			height: 100%;
+			visibility: visible;
+			transition: width 1s, height 1s 1s;
+			pointer-events: none;
+		}
+		.demo-8::after{	
+			width: 0;
+			height: 0;
+			right: 0;
+			bottom: 0;
+			border-left: 5px solid green;
+			border-bottom: 5px solid purple;
+			opacity: 0;
+		}		
+		.demo-8:hover::after{
+			width: 100%;
+			height: 100%;
+			opacity: 1;
+			transition: width 1s 2s, height 1s 3s, opacity 2s 2s;
+			pointer-events: none;	
+		}
+
+		.demo-9{
+			cursor: pointer;
+			border: 2px solid #333;
+			font-size: 20px;
+			padding: 20px 30px;
+			display: block;
+			margin-bottom: 10px;
+			border-radius: 50px;
+			background-color: #333;
+			color: #fff;
+			transition: 0.5s;
+		}
+
+		.demo-9:hover{
+			border-top-left-radius: 0;
+			border-bottom-right-radius: 0;
+			background-color: #fff;
+			color: #333;
+		}
+
+		.demo-10{
+			border: 2px solid #333;
+			font-size: 20px;
+			padding: 20px 30px;
+			display: block;
+			position: relative;
+			margin-bottom: 10px;
+			background-color: #fff;
+			color: #333;
+			cursor: pointer;
+			z-index: 0;
+		}
+		.demo-10::before{
+			content: '';
+			display: block;
+			position: absolute;
+			height: 70%;
+			background-color: red;
+			left: 0;
+			right: 100%;
+			top: 50%;
+			transform: translateY(-50%);
+			transition: 0.5s;
+			z-index: -1;
+		}
+		.demo-10:hover::before{
+			right: 0;
+		}
+		/*	
+		.demo-10 span{
+			position: relative;
+			!-- if after dung z-index theo tu tu --
+		}
+		*/
+
+		.demo-11{
+			border: 2px solid #333;
+			font-size: 20px;
+			padding: 20px 30px;
+			display: block;
+			margin-bottom: 10px;
+			background-color: #333;
+			color: #fff;
+			cursor: pointer;
+			position: relative;
+			overflow: hidden;
+		}
+		.demo-11::before{
+			content: '';
+			width: 100%;
+			height: 40px;
+			background-color: rgba(255,255,255,0.02);
+			left: 0;
+			position: absolute;
+			transform:  translate(-60%, -60%) rotate(-40deg);
+			top: 0;
+			left: 0;
+			transition: 0.6s;
+		}
+		.demo-11:hover::before{
+			transform:  translate(80%, 50%) rotate(-40deg);
+			pointer-events: none;
+			/* HOVER TYMPANUS*/
+		}
+
+		.demo-12{
+			cursor: pointer;
+			border: 2px solid #333;
+			font-size: 30px;
+			color: orange;
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			border-radius: 50%;
+			box-shadow: inset 0 0 0 0 #333;
+			transition: 0.6s;
+		}
+		.demo-12:hover{
+			box-shadow: inset 0 0 0 100px #333;
+			color: white;
+			font-size: 35px;
+		}
+
+		.demo-12-c2{
+			cursor: pointer;
+			border: 2px solid #333;
+			font-size: 30px;
+			color: orange;
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			border-radius: 50%;
+			box-shadow: inset 0 0 0 0 #333;
+			transition: 0.6s;
+			position: relative;
+		}
+		.demo-12-c2::before{
+			content: '';
+			position: absolute;
+			top: -2px;
+			right: -2px;
+			bottom: -2px;
+			left: -2px;
+			border-radius: 50%;
+			background-color: red;
+			transition:0.6s;
+		}
+		.demo-12-c2:hover{
+			color: white;
+		}
+		.demo-12-c2:hover::before{
+			box-shadow: inset 0 0 0 60px #333;
+		}
+		.demo-12-c2 span{
+			position: relative;
+		}
+
+		.demo-13{
+			cursor: pointer;
+			border: 2px solid #333;
+			font-size: 30px;
+			color: brown;
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			border-radius: 50%;
+			box-shadow: 0 0 0 0 rgba(51,51,51,1);
+			transition: 0.3s;
+			display: block;
+		}
+		.demo-13:hover{
+			box-shadow: 0 0 0 40px rgba(51,51,51,0);
+			font-size: 40px;
+		}
+
+		.demo-14{
+			cursor: pointer;
+			border: 2px solid #333;
+			font-size: 30px;
+			color: brown;
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			border-radius: 50%;
+			box-shadow: 0 0 0 0 rgba(51,51,51,1);
+			display: block;
+		}
+		.demo-14:hover{
+			box-shadow: 0 0 0 40px rgba(51,51,51,0);
+			font-size: 40px;
+			transition: 0.3s;
+		}
+
+		.demo-15{
+			cursor: pointer;
+			border: 2px solid #333;
+			font-size: 30px;
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			border-radius: 50%;
+			display: block;
+			position: relative;
+			transition: 0.6s;
+		}
+		.demo-15::before{
+			content: '';
+			position: absolute;
+			top: -2px;
+			right: -2px;
+			bottom: -2px;
+			left: -2px;
+			border-radius: 50%;
+			background-color: red;
+			box-shadow: inset 0 0 0 0 red, 0 0 0 0 rgba(51,51,51,1);
+		}
+		.demo-15:hover{
+			
+			color: #fff;
+		}
+		.demo-15:hover::before{
+			box-shadow: inset 0 0 0 60px #333, 0 0 0 60px rgba(51,51,51,0);
+			transition:0.6s;
+		}
+		.demo-15 span{
+			position: relative;
+		}
+
+    </style>
+</head>
+
+<body>
+	<div class="demo-1">
+		<div class="line">
+		</div>
+	</div>
+	
+	<div class="demo-1-c2">
+	</div>
+
+	<div class="demo-2">
+	</div>
+
+	<div class="demo-3">
+	</div>
+
+	<div class="demo-4">
+	</div>
+
+	<div class="demo-5">
+		<div class="line"><a href="#">link</a></div>
+	</div>
+
+	<div class="demo-6">
+		<a href="#">link</a>
+	</div>
+
+	<div class="demo-7">
+		<div class="line"><a href="#">Link</a></div>
+	</div>
+
+	<div class="demo-8"><a href="#">Link</a></div>
+
+	<button class="demo-9">Click me!!!</button>
+
+	<button class="demo-10">Click me!!!</button>
+
+	<button class="demo-11">Click me!!!</button>
+
+	<button class="demo-12"><span class="ion-chatbubbles"></span></button>
+
+	<button class="demo-12-c2"><span class="ion-chatbubbles"></span></button>
+
+	<button class="demo-13"><span class="ion-social-whatsapp"></span></button>
+
+	<button class="demo-14"><span class="ion-social-skype"></span></button>
+
+	<button class="demo-15"><span class="ion-social-skype"></span></button>
+
+</body>
+</html>
